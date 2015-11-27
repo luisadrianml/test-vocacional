@@ -5,14 +5,69 @@
       "description":"lo que sea",
       "questions":{
         "R":[
-        "Pregunta1",
-        "Pregunta2",
-        "Pregunta3",
-        "Pregunta4",
-        "Pregunta5",
-        "Pregunta6",
-        "Pregunta7",
-        "Pregunta8"
+        "Arreglar aparatos eléctricos",
+        "Reparar automóviles",
+        "Arreglar aparatos mecánicos",
+        "Constuir cosas con madera",
+        "Tomar un curso de educación técnica",
+        "Tomar un curso de dibujo mecánico",
+        "Tomar un curso de carpintería",
+        "Tomar un curso de mecánica automotriz",
+        "Trabajar con un mecánico o técnico excelente",
+        "Trabajar al aire libre",
+        "Operar máquinas o equipos de motor"
+      ],
+      "I":[
+        "Leer libros o revistas cientificas",
+        "Trabajar en un centro de investigacion o en un laboratorio",
+        "Trabajar en un proyecto cientifico",
+        "Estudiar una teoria cientifica",
+        "Trabajar con productos quimicos",
+        "Aplicar matematicas a problemas practicos",
+        "Tomar un curso de fisica",
+        "Tomar un curso de quimica",
+        "Tomar un curso de matematicas",
+        "Tomar un curso de biologia",
+        "Estudiar problemas academicos o tecnicos"
+      ],
+      "A":[
+        "Trazar, dibujar o pintar",
+        "Diseñar muebles, ropa o carteles",
+        "Ser integrante de una banda, grupou u orquesta",
+        "Tocar un instrumento musical",
+        "Pintar retratos o tomar fotografias",
+        "Escribir novelas u obras de teatro",
+        "Tomar un curso de arte",
+        "Arreglar o componer musica de cualquier tipo",
+        "Trabajar con un artista, escritor, o escultor talentoso",
+        "Actuar para otros (bailar, cantar, actuar, etc)",
+        "Leer articulos de arte, literatura, o musica"
+      ],
+      "S":[
+        "Conocer educadores o terapeutas importantes",
+        "Leer articulos o libros de sociologia",
+        "Trabajar para una obra de caridad",
+        "Ayudar a otros con sus problemas personales",
+        "Estudiar sobre delicuencia juvenil",
+        "Leer articulos o libros de psicologia",
+        "Tomar un curso sobre relaciones humanas",
+        "Enseñar en una escuela secundaria",
+        "Supervisar actividades de pacientes con enfermedades mentales",
+        "Enseñar a los adultos",
+        "Trabajar como voluntario"
+      ],
+      "E":[
+        "Aprender estrategias para el exito en los negocios",
+        "Asistir a conferencias de ventas",
+        "Trabajar para una obra de caridad",
+        "Ayudar a otros con sus problemas personales",
+        "Estudiar sobre delicuencia juvenil",
+        "Leer articulos o libros de psicologia",
+        "Tomar un curso sobre relaciones humanas",
+        "Enseñar en una escuela secundaria",
+        "Supervisar actividades de pacientes con enfermedades mentales",
+        "Enseñar a los adultos",
+        "Trabajar como voluntario"
       ]
       }
     }
