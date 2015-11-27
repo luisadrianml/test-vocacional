@@ -3,6 +3,9 @@ angular.module('testVApp', []);
 
 angular.module('testVApp')
     .controller("MainCtrl", function ($scope, $http) {
+        $scope.buttons = [1 ,0];
+        $scope.currentStep = 0;
+        $scope.moveFoward = 0;
         $scope.vars = {
             R: 0,
             I: 0,
@@ -21,5 +24,16 @@ angular.module('testVApp')
 
         $scope.setR = function () {
             $scope.R += 1;
+        }
+
+        $scope.saveClick = function(answer) {
+            $scope.vars.R += answer;
+            $scope.currentStep++;
+
+            if ($scope.currentStep===11) {
+                $scope.moveFoward++;
+                $scope.currentStep = 0;
+                console.log("test");
+            }
         }
     });
