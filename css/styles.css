@@ -21,6 +21,90 @@ h1,h2,h3,h4,.lead,.btn,.navbar a {
   letter-spacing:2px;
 }
 
+
+/* xs < 768 */
+@media screen and (max-width: 767px) {
+  .header h1 {
+    font-size:2em;
+    -webkit-text-stroke: 1px rgba(f,f,f,0.1);
+    color:#431a6d;
+    color:#fff;
+    margin-left:-5px;
+    margin-bottom:5px;
+    text-transform:uppercase;
+  }
+
+  .header .lead {
+    color:#d46054;
+    font-size:1em;
+  }
+}
+
+.btn-margin-top {
+  margin-top: 5px;
+}
+.btn-margin-bottom {
+  margin-bottom: 5px;
+}
+
+
+/* sm */
+@media screen and (min-width: 768px) {
+  .header h1 {
+    font-size:40px;
+    -webkit-text-stroke: 1px rgba(f,f,f,0.1);
+    color:#431a6d;
+    color:#fff;
+    margin-left:-5px;
+    margin-bottom:5px;
+    text-transform:uppercase;
+  }
+
+  .header .lead {
+    color:#d46054;
+    font-size:16px;
+  }
+
+}
+
+/* md */
+@media screen and (min-width: 992px) {
+  .header h1 {
+    font-size:80px;
+    -webkit-text-stroke: 1px rgba(f,f,f,0.1);
+    color:#431a6d;
+    color:#fff;
+    margin-left:-5px;
+    margin-bottom:5px;
+    text-transform:uppercase;
+  }
+
+  .header .lead {
+    color:#d46054;
+    font-size:25px;
+  }
+
+}
+
+/* lg */
+@media screen and (min-width: 1200px) {
+  .header h1 {
+    font-size:80px;
+    -webkit-text-stroke: 1px rgba(f,f,f,0.1);
+    color:#431a6d;
+    color:#fff;
+    margin-left:-5px;
+    margin-bottom:5px;
+    text-transform:uppercase;
+  }
+
+  .header .lead {
+    color:#d46054;
+    font-size:25px;
+  }
+
+}
+
 h1 {
   font-size:50px;
 }
@@ -89,24 +173,9 @@ img.grayscale {
   background-color:#d46054;
 }
 
-    
-.header h1 {
-  font-size:80px;
-  -webkit-text-stroke: 1px rgba(f,f,f,0.1);
-  color:#431a6d;
-  color:#fff;
-  margin-left:-5px;
-  margin-bottom:5px;
-  text-transform:uppercase;
-}
-
-.header .lead {
-  color:#d46054;
-  font-size:25px;
-}
 
 .header {
-  height: 80%;
+  height: 100%;
   background: #f68076 url('http://www.bootply.com/assets/example/pt_topo_l.png') repeat center center fixed;
 }
 

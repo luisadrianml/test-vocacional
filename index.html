@@ -3,9 +3,9 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title>CapitalCity Template</title>
+    <title>Test Vocacional APP - Luis Martinez</title>
     <meta name="generator" content="Bootply"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="vendor/fa/css/font-awesome.min.css" rel="stylesheet">
     <!--[if lt IE 9]>
@@ -17,14 +17,14 @@
 
 
 <div class="header alt vert">
-    <div class="container">
+    <div class="container vert col-md-12 col-sm-12 col-xs-12">
 
-        <h1>CapitalCity</h1>
+        <h1 class="title">Test Vocacional</h1>
 
-        <p class="lead">Starter Template for Bootstrap 3</p>
+        <p class="lead">Toma el test de Holland y conoce tu carrera</p>
 
         <div>&nbsp;</div>
-        <a href="#sec1" class="btn btn-default btn-lg">Get Started</a>
+        <a href="#sec1" class="btn btn-default btn-lg">Empieza</a>
     </div>
 </div>
 
@@ -32,21 +32,30 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>{{section.name}}</h1>
-                <p class="lead">{{section.description}}</p>
+                <h3>{{sections[currentSection].name}}</h3>
+                <p>{{sections[currentSection].description}}</p>
             </div>
         </div>
-        <div ng-repeat="q in section.questions.R" ng-show="currentStep == $index" class="row">
+        <div ng-repeat="q in sections[currentSection].questions[currentVariable]" ng-show="currentQuestion == $index"  class="row text-center">
             <div class="col-md-12">
                 <h2>{{q}}</h2>
             </div>
-            <div class="col-md-12">
-                <button type="button" ng-repeat="answer in buttons" ng-click="saveClick(answer)" class="btn btn-default">{{answer ? "Si" : "No"}}</button>
+            <div class="text-center col-md-12 col-sm-12 col-xs-12">
+                <button type="button" class="btn btn-default btn-margin-bottom text" ng-click="saveClick(1)">{{textQuestionSection[sectionOfYes].yes}}</button>
             </div>
+            <div class="text-center col-md-12 col-sm-12 col-xs-12">
+                <button type="button" class="btn btn-default btn-margin-top text" ng-click="saveClick(0)">{{textQuestionSection[sectionOfYes].no}}</button>
+                <!--
+                <button type="button" ng-repeat="answer in buttons" ng-click="saveClick(answer)" class="btn btn-default">{{answer ? "Si" : "No"}}</button>
+                -->
+            </div>
+            {{vars.R}}
         </div>
-        {{vars.R}}
     </div>
+
 </div>
+
+
 
 <footer>
     <div class="container">
