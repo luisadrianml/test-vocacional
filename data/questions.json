@@ -269,6 +269,35 @@
           "Auxiliar de auditoria"
         ]
       ]
+    },{
+      "name":"Auto-evaluaciones",
+      "description":"Evalúese a sí mismo(a) en cada una de las siguientes características en comparación con otas personas de su misma edad. Proporcione la evaluación más exacta de como usted se ve a sí mismo. Seleccione el numero apropiado y evite darse la misma puntación en cada habilidad.",
+      "questions":[
+        [
+          "Habilidad Mecanica",
+          "Destrezas Manuales"
+        ],
+        [
+          "Habilidad Cientifica",
+          "Habilidad Matematica"
+        ],
+        [
+          "Habilidad Artistica",
+          "Habilidad Musical"
+        ],
+        [
+          "Habilidad para enseñar",
+          "Entendimiento de otros"
+        ],
+        [
+          "Habilidad para ventas",
+          "Habilidad Gerencial"
+        ],
+        [
+          "Habilidad de oficinista",
+          "Destrezas de oficina"
+        ]
+      ]
     }
   ]
 }
