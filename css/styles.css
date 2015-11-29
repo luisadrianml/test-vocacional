@@ -176,7 +176,8 @@ img.grayscale {
 
 .header {
   height: 100%;
-  background: #f68076 url('http://www.bootply.com/assets/example/pt_topo_l.png') repeat center center fixed;
+  background: #f68076 url('/assets/bg-min.jpg') no-repeat center center fixed;
+  background-size: cover;
 }
 
 /* use alt in navbar and header for different color */
@@ -186,7 +187,7 @@ img.grayscale {
 }
 
 .alt .lead {
-  color: #3B0496;
+  color: white;
 }
 
 .alt.affix {
