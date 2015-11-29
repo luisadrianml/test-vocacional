@@ -3,7 +3,8 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title>Test Vocacional APP - Luis Martinez</title>
+    <title>Test Vocacional: Aplicación Web</title>
+    <link href="/assets/testAPP.ico" rel="icon" type="image/x-icon" />
     <meta name="generator" content="Bootply"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -29,30 +30,50 @@
 </div>
 
 <div id="sec1" class="blurb" ng-controller="MainCtrl">
-    <div class="container">
+    <div class="container" ng-hide="endOfQuestions == true">
         <div class="row">
             <div class="col-md-12">
                 <h3>{{sections[currentSection].name}}</h3>
                 <p>{{sections[currentSection].description}}</p>
             </div>
         </div>
-        <div ng-repeat="q in sections[currentSection].questions[currentVariable]" ng-show="currentQuestion == $index"  class="row text-center">
-            <div class="col-md-12">
-                <h2>{{q}}</h2>
+        <div class="container" ng-hide="showEvaluation==true" >
+            <div ng-repeat="q in sections[currentSection].questions[currentVariable]" ng-show="currentQuestion == $index"  class="row text-center">
+                <div class="col-md-12">
+                    <h2>{{q}}</h2>
+                </div>
+                <div class="text-center col-md-12 col-sm-12 col-xs-12">
+                    <button type="button" class="btn btn-default btn-margin-bottom text" ng-click="saveClick(1)">{{textQuestionSection[sectionOfYes].yes}}</button>
+                </div>
+                <div class="text-center col-md-12 col-sm-12 col-xs-12">
+                    <button type="button" class="btn btn-default btn-margin-top text" ng-click="saveClick(0)">{{textQuestionSection[sectionOfYes].no}}</button>
+                    <!--
+                    <button type="button" ng-repeat="answer in buttons" ng-click="saveClick(answer)" class="btn btn-default">{{answer ? "Si" : "No"}}</button>
+                    -->
+                </div>
             </div>
-            <div class="text-center col-md-12 col-sm-12 col-xs-12">
-                <button type="button" class="btn btn-default btn-margin-bottom text" ng-click="saveClick(1)">{{textQuestionSection[sectionOfYes].yes}}</button>
+        </div>
+        <div class="container" ng-show="showEvaluation==true">
+            <div ng-repeat="q in sections[currentSection].questions[currentVariable]" ng-show="currentQuestion == $index"  class="row text-center">
+                <div class="col-md-12">
+                    <h2>{{q}}</h2>
+                </div>
+                <div class="text-center col-md-12 col-sm-12 col-xs-12">
+                    <button type="button" ng-repeat="answer in autoEvaluation" ng-click="saveClick(answer)" class="btn btn-default">{{answer  | numberEva}}</button>
+                </div>
             </div>
-            <div class="text-center col-md-12 col-sm-12 col-xs-12">
-                <button type="button" class="btn btn-default btn-margin-top text" ng-click="saveClick(0)">{{textQuestionSection[sectionOfYes].no}}</button>
-                <!--
-                <button type="button" ng-repeat="answer in buttons" ng-click="saveClick(answer)" class="btn btn-default">{{answer ? "Si" : "No"}}</button>
-                -->
-            </div>
-            {{vars.R}}
         </div>
     </div>
-
+    <div class="container" ng-show="endOfQuestions == true">
+        <p>We finish!</p>
+        <p>Here are the answers:</p>
+        <p>{{vars.R}}</p>
+        <p>{{vars.I}}</p>
+        <p>{{vars.A}}</p>
+        <p>{{vars.S}}</p>
+        <p>{{vars.E}}</p>
+        <p>{{vars.C}}</p>
+    </div>
 </div>
 
 
@@ -62,14 +83,15 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3 text-center">
                 <ul class="list-inline">
-                    <li><i class="icon-facebook icon-2x"></i></li>
-                    <li><i class="icon-twitter icon-2x"></i></li>
-                    <li><i class="icon-google-plus icon-2x"></i></li>
-                    <li><i class="icon-pinterest icon-2x"></i></li>
+                    <li><i class="fa fa-twitter">@luisadrianml</i></li>
+                    <li><i class="fa fa-github">/luisadrianml</i></li>
+
                 </ul>
                 <hr>
-                <p>Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a>.<br>Company
-                    ©2014</p>
+                <p>Proyecto para <i>Inteligencia Artificial</i> en <a href="http://www.unibe.edu.do">UNIBE</a>.
+                    <br>
+                    Luis Martinez
+                    © 2015</p>
             </div>
         </div>
     </div>
@@ -86,6 +108,7 @@
 <script src="vendor/jquery/jquery-2.1.4.min.js"></script>
 <script src="vendor/angular/angular.min.js"></script>
 <script src="js/app.js"></script>
+<script src="js/filters/filter_evaluation.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/scripts.js"></script>
 </body>

@@ -1,11 +1,13 @@
-angular.module('testVApp', []);
+angular.module('testVApp', ['testVfilter']);
 
 
 angular.module('testVApp')
     .controller("MainCtrl", function ($scope, $http) {
-        $scope.buttons = [1 ,0];
+        $scope.autoEvaluation = [1,2,3,4,5,6,7];
         $scope.textQuestionSection = [{"yes": "Me gusta", "no":"Me disgusta"}, {"yes": "Si", "no":"No"}];
         $scope.currentQuestion = 0;
+        $scope.showEvaluation = false;
+        $scope.endOfQuestions = false;
         var textVars = ["R", "I", "A", "S", "E", "C"];
         $scope.currentVariable = 0;
         $scope.currentSection = 0;
@@ -47,10 +49,20 @@ angular.module('testVApp')
 
                 if ($scope.currentVariable == 6) { // Changing the Section
                     // Specify to ask the other questions :autoevaluacion:
-                    console.log("we got here");
+                    $scope.showEvaluation = true;
+                    $scope.currentSection++;
+                    $scope.currentQuestion = 0;
+                    $scope.currentVariable=0;
                 }
-            } else {
-                console.error("we got baaad!")
+            } else if ($scope.currentSection==3 && $scope.currentQuestion==2) {
+                $scope.currentVariable++;
+                $scope.currentQuestion = 0;
+                console.log("test333");
+
+                if ($scope.currentVariable == 6) { // Changing the Section
+                    // Specify to ask the other questions :autoevaluacion:
+                    $scope.endOfQuestions = true;
+                }
             }
 
 
