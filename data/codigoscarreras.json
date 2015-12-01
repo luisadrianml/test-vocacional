@@ -1,0 +1,178 @@
+{
+  "careers":[
+    {
+      "name":"No hemos encontrado una carrera"
+    },
+    {
+      "name":"Administración de Empresas",
+      "R":"1",
+      "I":"0",
+      "A":"0",
+      "S":"1",
+      "E":"1",
+      "C":"0"
+    },
+    {
+      "name":"Administración de Empresas",
+      "R":"0",
+      "I":"0",
+      "A":"1",
+      "S":"1",
+      "E":"1",
+      "C":"0"
+    },
+    {
+      "name":"Administración de Empresas, Hoteleras y Turísticas",
+      "R":"0",
+      "I":"0",
+      "A":"1",
+      "S":"1",
+      "E":"1",
+      "C":"0"
+    },
+    {
+      "name":"Arquitectura",
+      "R":"1",
+      "I":"1",
+      "A":"1",
+      "S":"0",
+      "E":"0",
+      "C":"0"
+    },
+    {
+      "name":"Publicidad",
+      "R":"0",
+      "I":"0",
+      "A":"1",
+      "S":"1",
+      "E":"1",
+      "C":"0"
+    },
+    {
+      "name":"Publicidad",
+      "R":"0",
+      "I":"0",
+      "A":"0",
+      "S":"1",
+      "E":"1",
+      "C":"1"
+    },
+    {
+      "name":"Derecho",
+      "R":"0",
+      "I":"1",
+      "A":"0",
+      "S":"1",
+      "E":"1",
+      "C":"0"
+    },
+    {
+      "name":"Diseño de Interiores",
+      "R":"0",
+      "I":"0",
+      "A":"1",
+      "S":"1",
+      "E":"1",
+      "C":"0"
+    },
+    {
+      "name":"Educación Inicial/Temprana",
+      "R":"0",
+      "I":"0",
+      "A":"1",
+      "S":"1",
+      "E":"1",
+      "C":"0"
+    },
+    {
+      "name":"Ingeniería Civil",
+      "R":"1",
+      "I":"1",
+      "A":"0",
+      "S":"0",
+      "E":"1",
+      "C":"0"
+    },
+    {
+      "name":"Ingeniería Industrial",
+      "R":"1",
+      "I":"1",
+      "A":"0",
+      "S":"0",
+      "E":"1",
+      "C":"0"
+    },
+    {
+      "name":"Ingeniería en Sistemas",
+      "R":"1",
+      "I":"1",
+      "A":"0",
+      "S":"0",
+      "E":"1",
+      "C":"0"
+    },
+    {
+      "name":"Ingeniería en Sistemas",
+      "R":"1",
+      "I":"1",
+      "A":"0",
+      "S":"0",
+      "E":"0",
+      "C":"1"
+    },
+    {
+      "name":"Mercadeo",
+      "R":"0",
+      "I":"0",
+      "A":"1",
+      "S":"1",
+      "E":"1",
+      "C":"0"
+    },
+    {
+      "name":"Medicina",
+      "R":"1",
+      "I":"1",
+      "A":"0",
+      "S":"1",
+      "E":"0",
+      "C":"0"
+    },
+    {
+      "name":"Odontología",
+      "R":"1",
+      "I":"1",
+      "A":"0",
+      "S":"1",
+      "E":"0",
+      "C":"0"
+    },
+    {
+      "name":"Psicología Clínica",
+      "R":"0",
+      "I":"1",
+      "A":"1",
+      "S":"1",
+      "E":"0",
+      "C":"0"
+    },
+    {
+      "name":"Psicología Organizacional",
+      "R":"0",
+      "I":"1",
+      "A":"0",
+      "S":"1",
+      "E":"1",
+      "C":"0"
+    }
+
+
+  ]
+
+
+}
+
+
+
+
+
