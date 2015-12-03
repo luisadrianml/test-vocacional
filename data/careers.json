@@ -1,0 +1,84 @@
+{
+  "careers":[
+    {
+      "name":"No hemos encontrado una carrera",
+      "code":"0"
+    },
+    {
+      "name":"Administración de Empresas",
+      "code":"ERS"
+    },
+    {
+      "name":"Administración de Empresas",
+      "code":"ESA"
+    },
+    {
+      "name":"Administración de Empresas, Hoteleras y Turísticas",
+      "code":"ESA"
+    },
+    {
+      "name":"Arquitectura",
+      "code":"AIR"
+    },
+    {
+      "name":"Publicidad",
+      "code":"ESA"
+    },
+    {
+      "name":"Publicidad",
+      "code":"ESC"
+    },
+    {
+      "name":"Derecho",
+      "code":"ESI"
+    },
+    {
+      "name":"Diseño de Interiores",
+      "code":"AES"
+    },
+    {
+      "name":"Educación Inicial/Temprana",
+      "code":"SAE"
+    },
+    {
+      "name":"Ingeniería Civil",
+      "code":"IRE"
+    },
+    {
+      "name":"Ingeniería Industrial",
+      "code":"EIR"
+    },
+    {
+      "name":"Ingeniería en Sistemas",
+      "code":"IRE"
+    },
+    {
+      "name":"Ingeniería en Sistemas",
+      "code":"IRC"
+    },
+    {
+      "name":"Mercadeo",
+      "code":"ASE"
+    },
+    {
+      "name":"Medicina",
+      "code":"IRS"
+    },
+    {
+      "name":"Odontología",
+      "code":"IRS"
+    },
+    {
+      "name":"Psicología Clínica",
+      "code":"SIA"
+    },
+    {
+      "name":"Psicología Organizacional",
+      "code":"IES"
+    }
+
+
+  ]
+
+
+}
