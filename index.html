@@ -8,7 +8,11 @@
     <meta name="generator" content="Bootply"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrapDialog/bootstrap-dialog.min.css" rel="stylesheet">
     <link href="vendor/fa/css/font-awesome.min.css" rel="stylesheet">
+    <link href="vendor/angular-chart/angular-chart.css" rel="stylesheet">
+    <script src="vendor/angular-chart/Chart.min.js"></script>
+
     <!--[if lt IE 9]>
     <!--<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>-->
     <![endif]-->
@@ -29,18 +33,17 @@
     </div>
 </div>
 
-<div id="sec1" class="blurb" ng-controller="MainCtrl">
-    <!--<button type="button" class="btn btn-default btn-margin-top text" ng-click="findThreeMayors(2, 3, 40, 2,1, 23)">Hola</button>-->
+<div id="sec1" class="blurb" ng-controller="BarCtrl">
     <div class="container" ng-hide="endOfQuestions == true">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 ">
                 <h3>{{sections[currentSection].name}}</h3>
                 <p>{{sections[currentSection].description}}</p>
             </div>
         </div>
         <div class="container" ng-hide="showEvaluation==true" >
             <div ng-repeat="q in sections[currentSection].questions[currentVariable]" ng-show="currentQuestion == $index"  class="row text-center">
-                <div class="col-md-12">
+                <div class="col-md-12 margin-bottom">
                     <h2>{{q}}</h2>
                 </div>
                 <div class="text-center col-md-12 col-sm-12 col-xs-12">
@@ -48,9 +51,6 @@
                 </div>
                 <div class="text-center col-md-12 col-sm-12 col-xs-12">
                     <button type="button" class="btn btn-default btn-margin-top text" ng-click="saveClick(0)">{{textQuestionSection[sectionOfYes].no}}</button>
-                    <!--
-                    <button type="button" ng-repeat="answer in buttons" ng-click="saveClick(answer)" class="btn btn-default">{{answer ? "Si" : "No"}}</button>
-                    -->
                 </div>
             </div>
         </div>
@@ -66,14 +66,31 @@
         </div>
     </div>
     <div class="container" ng-show="endOfQuestions == true">
-        <p>We finish!</p>
-        <p>Here are the answers:</p>
-        <p>{{vars.R}}</p>
-        <p>{{vars.I}}</p>
-        <p>{{vars.A}}</p>
-        <p>{{vars.S}}</p>
-        <p>{{vars.E}}</p>
-        <p>{{vars.C}}</p>
+        <h2>Hemos terminado!</h2>
+        <p><hr></p>
+        <h4>Tus resultados:</h4>
+        <div class="container">
+                <div class="col-md-offset-2 col-lg-offset-2 col-md-8 col-lg-8">
+                    <canvas id="bar" class="chart chart-bar"
+                            chart-data="data" chart-labels="labels" >
+                    </canvas>
+                </div>
+        </div>
+
+        <h4>Combinación de letras: </h4>
+        <h5>{{suggestedCode}}</h5>
+
+        <div class="row" ng-hide="noOrdinaryCareer==true">
+        <h4>Oferta academica</h4>
+            <div ng-repeat="career in careersSuggestions" >
+                <h5>{{career.name}}</h5>
+            </div>
+        </div>
+
+        <h4>Oferta academica sin prioridad en peso de personalidad</h4>
+        <div ng-repeat="career in careersSuggestionsNoOrder" ng-show="noOrdinaryCareer==true">
+            <h5>{{career}}</h5>
+        </div>
     </div>
 </div>
 
@@ -112,5 +129,8 @@
 <script src="js/filters/filter_evaluation.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/scripts.js"></script>
+<script src="vendor/bootstrapDialog/bootstrap-dialog.min.js"></script>
+<script src="vendor/angular-chart/angular-chart.min.js"></script>
+
 </body>
 </html>
