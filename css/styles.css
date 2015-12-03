@@ -41,10 +41,10 @@ h1,h2,h3,h4,.lead,.btn,.navbar a {
 }
 
 .btn-margin-top {
-  margin-top: 5px;
+  margin-top: 10px;
 }
 .btn-margin-bottom {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 
@@ -198,10 +198,13 @@ img.grayscale {
   background-color:#5D17BA;
 }
 
+.margin-bottom{
+  margin-bottom:10px;
+}
 
 
 .blurb {
-  padding: 120px 0;
+  padding: 50px 0;
   background-color:#fefefe;
 }
 
