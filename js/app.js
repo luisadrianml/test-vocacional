@@ -1,4 +1,4 @@
-angular.module('testVApp', ['testVfilter', 'chart.js']);
+﻿angular.module('testVApp', ['testVfilter', 'chart.js']);
 
 
 angular.module('testVApp')
@@ -10,7 +10,7 @@ angular.module('testVApp')
         $scope.endOfQuestions = false;
         var textVars = ["R", "I", "A", "S", "E", "C"];
         $scope.currentVariable = 0;
-        $scope.currentSection = 3; //Change it back
+        $scope.currentSection = 0; //Change it back
         $scope.sectionOfYes = 0;
         $scope.vars = {
             R: 0,
