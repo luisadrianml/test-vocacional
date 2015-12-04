@@ -2,6 +2,7 @@
 
 /* move special fonts to HTML head for better performance */
 @import url(http://fonts.googleapis.com/css?family=Voltaire);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
 
 html,
 body {
@@ -21,6 +22,18 @@ h1,h2,h3,h4,.lead,.btn,.navbar a {
   letter-spacing:2px;
 }
 
+.paragraphs {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+  letter-spacing:0.6px;
+}
+
+.paragraphs .title {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  letter-spacing:1px;
+  font-weight: 700;
+}
 
 /* xs < 768 */
 @media screen and (max-width: 767px) {
@@ -104,6 +117,18 @@ h1,h2,h3,h4,.lead,.btn,.navbar a {
   }
 
 }
+
+@media print {
+  #bar {
+    display:none;
+  }
+}
+
+
+.space {
+  padding-top:100px;
+}
+
 
 h1 {
   font-size:50px;

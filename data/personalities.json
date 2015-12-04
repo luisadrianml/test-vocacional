@@ -1,0 +1,38 @@
+{
+  "messages":[
+    {
+      "name":"Realista",
+      "description":"Eres una persona que requiere el uso de máquinas, herramientas y cosas. Valoras el reconocimiento monetario por logros observables, la honestidad y el sentido común. Te ves a ti mismo como práctico, observador, y con más habilidades manuales y mecánicas que sociales, mientras otros te ven como francos, autosuficientes y persistentes.",
+      "ocupations": "Las ocupaciones relacionadas requiren destrezas manuales y mecánicas. Estas ocupaciones recompensan seguir reglas y logros prácticos. Dichas conllevan actividades prácticas y el uso de herramientas y/o materiales."
+    },
+    {
+      "name":"Investigativa",
+      "description":"Eres una persona que está interesada en la exploración y entendimiento de cosas y eventos. Valoras el conocimiento, el aprendizaje, logro e independencia. Te ves como un ente analítico, inteligente, escépticos y on destrezas acádemicas, mientras otros te ven como inteligente e independiente.",
+      "ocupations":"Las ocupaciones relacionadas requieren destrezas analíticas, técnicas y científicas; y recompensan el análisis de información para entender y resolver problemas. "
+    },
+    {
+      "name":"Artística",
+      "description":"Eres una persona que valora las ideas creativas, la auto-expresión y la belleza. Te ves a ti mismo como receptivo a experiencias, imaginativos, intelectuales, y con más destrezas creativas que de administración o de oficina, mientras otros te ven como poco comunes, desordenados, creativos y sensibles. Eres de los que evitas situaciones donde necesiten de seguir rutinas y reglas.",
+      "ocupations":"Las ocupaciones relacionadas requieren habilidad creativa y expresión emotiva. Estas ocupaciones recompensan la imaginación y las ideas poco comunes, así como los valores estéticos. Ocupaciones en el área con llevan trabajo creativo en música, escritura, actuación, y otras artes así como trabajo intelectual."
+    },
+    {
+      "name":"Social",
+      "description":"Eres de las personas que disfruta de actividades que les permitan ayudar, enseñar, aconsejar, o servir a otros. Valoras el servicio social, la justicia y la compresión. Te ves a ti mismo como empatitos y pacientes con más destrezas sociales que mecánicas, mientras otros te ven como serviciales, agradables, extrovertidos y pacientes. Eres de los que evitan actividades mecánicas y técnicas.",
+      "ocupations":"Las ocupaciones relacionadas requieren aptitudes interpersonales y destreza para enseñar, tratar y sanar a otros. Recompensan la empatía, benevolencia, sociabilidad y amabilidad. Ocupaciones en el área conllevan trabajar con otros de una manera servicial o de apoyo."
+    },
+    {
+      "name":"Emprendedora",
+      "description":"Eres de la personas que su personalidad requiere de persuadir o dirigir a otros. Valoras el éxito financiero y social, así como la lealtad, la responsabilidad y el tomar riesgos. Te ves a ti mismo como seguro, y con más habilidad de ventas y persuasión que habilidad científica, mientras otros te ven como energéticos, extrovertidos, astutos y ambiciosos.",
+      "ocupations":"Las ocupaciones relacionadas requieren destreza para persuadir a otros y recompensan la iniciativa, el esfuerzo por alcanzar logos, el dominio y la seguridad. Valoran la responsabilidad y el estilo ambicioso. "
+    },
+    {
+      "name":"Convencional",
+      "description":"Eres de las personas interesadas en seguir rutinas ordenadas y satisfacer estándares claros. Valoras la precisión y el poder en asusntos de negocios o sociales. Te ves como concienzudo y práctico, mientras otros te ven como cuidadosos, eficientes y ordenados.",
+      "ocupations":"Las ocupaciones relacionadas requieren destrezas de oficina, destrezas para cumplir estándares precisos de desempeño y recompensan habilidades de organización y confiabilidad."
+    }
+
+  ]
+
+
+
+}

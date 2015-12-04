@@ -38,7 +38,7 @@
         <div class="row">
             <div class="col-md-12 ">
                 <h3>{{sections[currentSection].name}}</h3>
-                <p>{{sections[currentSection].description}}</p>
+                <p class="paragraphs">{{sections[currentSection].description}}</p>
             </div>
         </div>
         <div class="container" ng-hide="showEvaluation==true" >
@@ -65,11 +65,11 @@
             </div>
         </div>
     </div>
-    <div class="container" ng-show="endOfQuestions == true">
-        <h2>Hemos terminado!</h2>
+    <div class="container" id="printable" ng-show="endOfQuestions == true">
+        <h2>¡Hemos terminado!</h2>
         <p><hr></p>
         <h4>Tus resultados:</h4>
-        <div class="container">
+        <div class="container" id="result">
                 <div class="col-md-offset-2 col-lg-offset-2 col-md-8 col-lg-8">
                     <canvas id="bar" class="chart chart-bar"
                             chart-data="data" chart-labels="labels" >
@@ -79,17 +79,38 @@
 
         <h4>Combinación de letras: </h4>
         <h5>{{suggestedCode}}</h5>
-
-        <div class="row" ng-hide="noOrdinaryCareer==true">
-        <h4>Oferta academica</h4>
-            <div ng-repeat="career in careersSuggestions" >
-                <h5>{{career.name}}</h5>
+        <div class="row" >
+            <h4>Tu estilo de personalidad:</h4>
+            <div ng-repeat="message in messages">
+                <h5 class="paragraphs title">{{message.name}}</h5>
+                <h6 class="paragraphs">{{message.description}}</h6>
+                <h6 class="paragraphs">{{message.ocupations}}</h6>
             </div>
         </div>
+        <div class="row" >
+        <h4>Oferta academica</h4>
+            <div ng-repeat="career in careersSuggestions" >
+                <h5 class="paragraphs">{{career.name}}</h5>
+            </div>
+        </div>
+        <div class="row" ng-show="noOrdinaryCareer==true">
+            <h4>Oferta academica sin prioridad en peso de personalidad</h4>
+            <div ng-repeat="career in careersSuggestionsNoOrder">
+                <h5 class="paragraphs">{{career}}</h5>
+            </div>
+        </div>
+            <div class="row">
+                <h4>Conclusión:</h4>
+                <h5 class="paragraphs" ng-show="showPsMessage==true">{{psMessage}}</h5>
+                <h5 class="paragraphs" ng-show="showNothingFound==true">{{nothingFound}}</h5>
+            </div>
+    </div>
+    <div class="container space text-center">
+        <div clas="row">
+            <button type="button" class="btn btn-default" ng-click="restartEverything()">Restablecer</button>
+            <button type="button" class="btn btn-default" ng-click="" ng-hide="endOfQuestions == true">Inicio</button>
+            <button type="button" class="btn btn-default" ng-click="printDiv('printable')" ng-show="endOfQuestions == true">Imprimir</button>
 
-        <h4>Oferta academica sin prioridad en peso de personalidad</h4>
-        <div ng-repeat="career in careersSuggestionsNoOrder" ng-show="noOrdinaryCareer==true">
-            <h5>{{career}}</h5>
         </div>
     </div>
 </div>
@@ -131,6 +152,5 @@
 <script src="js/scripts.js"></script>
 <script src="vendor/bootstrapDialog/bootstrap-dialog.min.js"></script>
 <script src="vendor/angular-chart/angular-chart.min.js"></script>
-
 </body>
 </html>

@@ -24,18 +24,25 @@ angular.module('testVApp')
         $scope.suggestedCode = "No hay código sugerido";
         $scope.careersSuggestionsNoOrder = [];
         $scope.noOrdinaryCareer = false;
-
+        $scope.careerWithOrderChanged = false;
+        $scope.messages = [];
+        $scope.firstLetter = null;
+        $scope.secondLetter = null;
+        $scope.thirdLetter = null;
+        $scope.psMessage = "Para profundizar los resultados acercarse a un psicologo vocacional.";
+        $scope.nothingFound = "No fue posible encontrar una carrera, favor ponerse en contacto con un psicologo vocacional con estos resultados para mayor analisis."
+        $scope.showPsMessage = false;
+        $scope.showNothingFound = false;
         $scope.sections = null;
         $scope.careersNoOrders = null;
         $scope.careers = null;
+        $scope.personalities = null;
 
         $scope.labels = ['R', 'I', 'A', 'S', 'E', 'C'];
         $scope.series = ['Resultados'];
 
-
-
         /**
-         * Method GET to retrieve the questions from the Json
+         * Method GET to retrieve the 'questions' from the Json
          */
         $http.get("/data/questions.json").then(function (res) {
             console.info(res);
@@ -59,6 +66,15 @@ angular.module('testVApp')
             console.info(res);
             $scope.careers = res.data.careers;
             console.info($scope.careers);
+        });
+
+        /**
+         * Method GET to retrieve the 'personalities' from the Json
+         */
+        $http.get("/data/personalities.json").then(function (res) {
+            console.info(res);
+            $scope.personalities = res.data.messages;
+            console.info($scope.messages);
         });
 
         /**
@@ -113,8 +129,6 @@ angular.module('testVApp')
 
         }
 
-
-
         /**
          * Method to find which career to suggest without any order about the letters
          * @param arrayOfCodes is an array with 1 ones for the mayors letters
@@ -158,16 +172,75 @@ angular.module('testVApp')
 
         }
 
+        /**
+         * Method to find all possible careers
+         * @param threeMayors is an object of the first, second and third letter
+         */
         $scope.findCareer = function(threeMayors) {
             var first = threeMayors.primer;
             var second = threeMayors.segundo;
             var third = threeMayors.tercer;
+
+            $scope.firstLetter = first.letter;
+            $scope.secondLetter = second.letter;
+            $scope.thirdLetter = third.letter;
 
             var combination = first.letter + second.letter + third.letter + "";
             var careersToSuggest = [];
 
             $scope.suggestedCode = combination;
 
+            careersToSuggest = $scope.searchThroughCombination(combination, careersToSuggest);
+
+
+        if (careersToSuggest[0].code!="0") {
+            // Career found
+            //return careersToSuggest;
+            $scope.careersSuggestions = careersToSuggest;
+            $scope.showPsMessage = true;
+        }
+        else {
+            // Career NO found
+            //return false;
+
+                console.log("we are here for changin order");
+                var combination2 = first.letter + third.letter +  second.letter + "";
+                var careersTem = $scope.searchThroughCombination(combination2, careersToSuggest);
+                careersTem.shift();
+
+                if (careersTem[0].code!="0") {
+                    //console.log("we didnt!");
+                    $scope.careersSuggestions = careersTem;
+                    $scope.showPsMessage = true;
+
+                } else {
+
+                    $scope.noOrdinaryCareer = true;
+                    $scope.careersSuggestions = careersToSuggest;
+
+
+                    $scope.careersSuggestionsNoOrder = $scope.findCareerWithoutOrder($scope.setOnesForLettersInCareer(first,second,third));
+
+                    console.log($scope.careersSuggestionsNoOrder[0]);
+                    if($scope.careersSuggestionsNoOrder[0]=="No hemos encontrado una carrera") {
+                        $scope.showNothingFound = true;
+                    } else {
+                        $scope.showPsMessage = true;
+                    }
+
+                }
+
+        }
+
+        }
+
+        /**
+         * Method to search the career
+         * @param combination is the string value from the result
+         * @param careersToSuggest is the array of careers that will be modify
+         * @returns {*} the same array in the param with all modifications
+         */
+        $scope.searchThroughCombination = function(combination, careersToSuggest) {
             if (combination==$scope.careers[1].code) { // Administracion de Empresas
                 careersToSuggest.push($scope.careers[1]);
             }
@@ -235,30 +308,25 @@ angular.module('testVApp')
                 careersToSuggest.push($scope.careers[0])
             }
 
-            for (var i = 0; i < careersToSuggest.length; i++) {
-                console.log(careersToSuggest[i].name);
-            }
-
-
-
-        if (careersToSuggest[0].code!="0") {
-            // Career found
-            //return careersToSuggest;
-            $scope.careersSuggestions = careersToSuggest;
+            return careersToSuggest;
         }
-        else {
-            // Career NO found
-            //return false;
-            $scope.noOrdinaryCareer = true;
-            $scope.careersSuggestions = careersToSuggest;
+
+        /**
+         * Method that will set ones for the letter to compare with the JSON File
+         * @param first is the object of the first letter
+         * @param second is the object of the second letter
+         * @param third is the object of the third letter
+         * @returns {{R: string, I: string, A: string, S: string, E: string, C: string}} is an array with the respective value
+         */
+        $scope.setOnesForLettersInCareer = function(first,second,third) {
             var arrayOfCodes = {
-             "R":"0",
-             "I":"0",
-             "A":"0",
-             "S":"0",
-             "E":"0",
-             "C":"0"
-             };
+                "R":"0",
+                "I":"0",
+                "A":"0",
+                "S":"0",
+                "E":"0",
+                "C":"0"
+            };
 
             if (first.letter == "R") {
                 arrayOfCodes.R = "1";
@@ -315,9 +383,7 @@ angular.module('testVApp')
                 arrayOfCodes.C = "1";
             }
 
-            $scope.careersSuggestionsNoOrder = $scope.findCareerWithoutOrder(arrayOfCodes);
-        }
-
+            return arrayOfCodes;
         }
 
         /**
@@ -1047,13 +1113,95 @@ angular.module('testVApp')
         }
 
         /**
+         * Method that works as refresh button
+         */
+        $scope.restartEverything = function() {
+            window.location.reload();
+        }
+
+        /**
+         * Method to print only the DIV of results
+         * @param divName is the ID of the DIV to print
+         */
+        $scope.printDiv = function (divName) {
+            var canvas = document.getElementById("bar");
+            var img = canvas.toDataURL("image/png");
+            var printContents = document.getElementById(divName).innerHTML;
+            var canvasImage = ('<img src="'+img+'"/>');
+            var originalContents = document.body.innerHTML;
+            document.body.innerHTML = printContents+canvasImage;
+            window.print();
+            document.body.innerHTML = originalContents;
+        }
+
+        /**
+         * Method to set all messages for all the letters
+         */
+        $scope.setMessages = function() {
+            if ($scope.firstLetter == "R") {
+                $scope.messages.push($scope.personalities[0]);
+            }
+            else if ($scope.firstLetter == "I") {
+                $scope.messages.push($scope.personalities[1]);
+            }
+            else if ($scope.firstLetter == "A") {
+                $scope.messages.push($scope.personalities[2]);
+            }
+            else if ($scope.firstLetter == "S") {
+                $scope.messages.push($scope.personalities[3]);
+            }
+            else if ($scope.firstLetter == "E") {
+                $scope.messages.push($scope.personalities[4]);
+            }
+            else if ($scope.firstLetter == "C") {
+                $scope.messages.push($scope.personalities[5]);
+            }
+            if ($scope.secondLetter == "R") {
+                $scope.messages.push($scope.personalities[0]);
+            }
+            else if ($scope.secondLetter == "I") {
+                $scope.messages.push($scope.personalities[1]);
+            }
+            else if ($scope.secondLetter == "A") {
+                $scope.messages.push($scope.personalities[2]);
+            }
+            else  if ($scope.secondLetter == "S") {
+                $scope.messages.push($scope.personalities[3]);
+            }
+            else if ($scope.secondLetter == "E") {
+                $scope.messages.push($scope.personalities[4]);
+            }
+            else if ($scope.secondLetter == "C") {
+                $scope.messages.push($scope.personalities[5]);
+            }
+            if ($scope.thirdLetter == "R") {
+                $scope.messages.push($scope.personalities[0]);
+            }
+            else if ($scope.thirdLetter == "I") {
+                $scope.messages.push($scope.personalities[1]);
+            }
+            else if ($scope.thirdLetter == "A") {
+                $scope.messages.push($scope.personalities[2]);
+            }
+            else if ($scope.thirdLetter == "S") {
+                $scope.messages.push($scope.personalities[3]);
+            }
+            else  if ($scope.thirdLetter == "E") {
+                $scope.messages.push($scope.personalities[4]);
+            }
+            else if ($scope.thirdLetter == "C") {
+                $scope.messages.push($scope.personalities[5]);
+            }
+        }
+
+        /**
          * Function watching when the endOfQuestions shows up, so it can trigger a notification
          */
         $timeout(function () {
             $scope.$watch('endOfQuestions', function() {
                 if ($scope.endOfQuestions) {
                     var careersTemp = $scope.findCareer($scope.findThreeMayors([$scope.vars.R, $scope.vars.I, $scope.vars.A, $scope.vars.S, $scope.vars.E, $scope.vars.C]))
-
+                    $scope.setMessages();
                 }
             });
         });
