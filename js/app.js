@@ -2,7 +2,7 @@
 
 
 angular.module('testVApp')
-    .controller("BarCtrl", function ($scope, $http, $timeout) {
+    .controller("BarCtrl", function ($scope, $http, $timeout, $location) {
         $scope.autoEvaluation = [1,2,3,4,5,6,7];
         $scope.textQuestionSection = [{"yes": "Me gusta", "no":"Me disgusta"}, {"yes": "Si", "no":"No"}];
         $scope.currentQuestion = 0;
@@ -10,7 +10,7 @@ angular.module('testVApp')
         $scope.endOfQuestions = false;
         var textVars = ["R", "I", "A", "S", "E", "C"];
         $scope.currentVariable = 0;
-        $scope.currentSection = 0; //Change it back
+        $scope.currentSection = 3; //Change it back
         $scope.sectionOfYes = 0;
         $scope.vars = {
             R: 0,
@@ -1292,4 +1292,9 @@ angular.module('testVApp')
                 }
             });
         });
+
+        $scope.go = function ( path ) {
+            $location.path( path );
+        };
+
     });

@@ -21,7 +21,7 @@
 <body>
 
 
-<div class="header alt vert">
+<div id="inicio" class="header alt vert">
     <div class="container vert col-md-12 col-sm-12 col-xs-12">
 
         <h1 class="title">Test Vocacional</h1>
@@ -173,11 +173,11 @@
                 </div>
         </div>
 
-        <h4>Combinación de letras: <a href="#test" ng-click="dialogNew(1)" class="fa fa-info-circle links">  </a></h4>
+        <h4>Combinación de letras: <a href="#test" ng-click="dialogNew(1)" class="fa fa-info-circle links" tooltip-smart="true" tooltips tooltip-template="¿Necesitas ayuda?">  </a></h4>
 
         <h5 class="text-muted">{{suggestedCode}}</h5>
         <div class="row" >
-            <h4>Tu estilo de personalidad: <a href="#test" ng-click="dialogNew(2)" class="fa fa-info-circle links">  </a></h4>
+            <h4>Tu estilo de personalidad: <a href="#test" ng-click="dialogNew(2)" class="fa fa-info-circle links" tooltip-smart="true" tooltips tooltip-template="¿Necesitas ayuda?">  </a></h4>
             <div ng-repeat="message in messages">
                 <h5 class="paragraphs text-primary">{{message.name}}</h5>
                 <h6 class="paragraphs">{{message.description}}</h6>
@@ -185,30 +185,33 @@
             </div>
         </div>
         <div class="row" >
-        <h4>Oferta academica <a href="#test" ng-click="dialogNew(3)" class="fa fa-info-circle links">  </a></h4>
+        <h4>Oferta academica <a href="#test" ng-click="dialogNew(3)" class="fa fa-info-circle links" tooltip-smart="true" tooltips tooltip-template="¿Necesitas ayuda?">  </a></h4>
             <div ng-repeat="career in careersSuggestions" >
                 <h5 class="paragraphs text-success">{{career.name}}</h5>
             </div>
         </div>
         <div class="row" ng-show="noOrdinaryCareer==true">
-            <h4>Oferta academica sin prioridad en peso de personalidad <a href="#test" ng-click="dialogNew(4)" class="fa fa-info-circle links">  </a></h4>
+            <h4>Oferta academica sin prioridad en peso de personalidad <a href="#test" ng-click="dialogNew(4)" class="fa fa-info-circle links" tooltip-smart="true" tooltips tooltip-template="¿Necesitas ayuda?">  </a></h4>
             <div ng-repeat="career in careersSuggestionsNoOrder">
                 <h5 class="paragraphs text-success">{{career}}</h5>
             </div>
         </div>
             <div class="row">
-                <h4>Conclusión: <a href="#test" ng-click="dialogNew(5)" class="fa fa-info-circle links">  </a></h4>
+                <h4>Conclusión: <a href="#test" ng-click="dialogNew(5)" class="fa fa-info-circle links" tooltip-smart="true" tooltips tooltip-template="¿Necesitas ayuda?">  </a></h4>
                 <h5 class="paragraphs text-info" ng-show="showPsMessage==true">{{psMessage}}</h5>
                 <h5 class="paragraphs text-info" ng-show="showNothingFound==true">{{nothingFound}}</h5>
             </div>
     </div>
     <div class="container space text-center">
         <div clas="row">
-            <button type="button" class="btn btn-default" ng-click="restartEverything()">Restablecer</button>
-            <button type="button" class="btn btn-default" ng-click="" ng-hide="endOfQuestions == true">Inicio</button>
-            <button type="button" class="btn btn-default" ng-click="printDiv('printable')" ng-show="endOfQuestions == true">Imprimir</button>
+            <button type="button" class="btn btn-default" ng-click="restartEverything()" tooltip-smart="true" tooltips tooltip-template="Reinicia test">Restablecer</button>
 
         </div>
+        <div class="row"><br/></div>
+        <div clas="row">
+            <button type="button" class="btn btn-default" ng-click="printDiv('printable')" ng-show="endOfQuestions == true" tooltip-smart="true" tooltips tooltip-template="Imprime resultados">Imprimir</button>
+        </div>
+
     </div>
 </div>
 
