@@ -14,12 +14,22 @@ body {
 /* fix bs3 horizontal scrollbar bug */
 .row { margin: 0; padding: 0 }
 
+.descr {
+  width: 90%;
+  border-radius: 3px;
+  background-color: rgba(255,255,255,0.1);
+}
 
 /* use special fonts in certain elements */
-h1,h2,h3,h4,.lead,.btn,.navbar a {
+h1,h2,h3,h4,.lead,.description, .btn,.navbar a {
   text-transform:uppercase;
   font-family:'Voltaire',Arial,sans-serif;
   letter-spacing:2px;
+}
+
+.links a:hover, a:visited, a:link, a:active {
+  color: #999999;
+  text-decoration: none;
 }
 
 .paragraphs {
@@ -51,6 +61,11 @@ h1,h2,h3,h4,.lead,.btn,.navbar a {
     color:#d46054;
     font-size:1em;
   }
+
+  .header .description {
+    color:white;
+    font-size:2em;
+  }
 }
 
 .btn-margin-top {
@@ -78,6 +93,11 @@ h1,h2,h3,h4,.lead,.btn,.navbar a {
     font-size:16px;
   }
 
+  .header .description {
+    color:white;
+    font-size:2em;
+  }
+
 }
 
 /* md */
@@ -95,6 +115,11 @@ h1,h2,h3,h4,.lead,.btn,.navbar a {
   .header .lead {
     color:#d46054;
     font-size:25px;
+  }
+
+  .header .description {
+    color:white;
+    font-size:2em;
   }
 
 }
@@ -116,10 +141,19 @@ h1,h2,h3,h4,.lead,.btn,.navbar a {
     font-size:25px;
   }
 
+  .header .description {
+    color:white;
+    font-size:2em;
+  }
+
 }
 
 @media print {
   #bar {
+    display:none;
+  }
+
+  .links {
     display:none;
   }
 }
@@ -242,17 +276,17 @@ img.grayscale {
   color:#777;
 }
 
-.featurette {
+.descriptions {
   background: #222334;
   padding: 50px 0;
   color: #ffffff;
 }
 
-.featurette-item {
+.descriptions-item {
   margin-bottom: 15px;
 }
 
-.featurette-item > i {
+.descriptions-item > i {
   border: 3px solid #ffffff;
   border-radius: 50%;
   display: inline-block;
@@ -264,7 +298,7 @@ img.grayscale {
   text-align: center;
 }
 
-.featurette-item > i:hover {
+.descriptions-item > i:hover {
   font-size: 68px;
 }
 

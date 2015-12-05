@@ -11,8 +11,8 @@
     <link href="vendor/bootstrapDialog/bootstrap-dialog.min.css" rel="stylesheet">
     <link href="vendor/fa/css/font-awesome.min.css" rel="stylesheet">
     <link href="vendor/angular-chart/angular-chart.css" rel="stylesheet">
+    <link href="vendor/angular-tooltip/angular-tooltips.min.css" rel="stylesheet">
     <script src="vendor/angular-chart/Chart.min.js"></script>
-
     <!--[if lt IE 9]>
     <!--<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>-->
     <![endif]-->
@@ -29,11 +29,70 @@
         <p class="lead">Toma el test de Holland y conoce tu carrera</p>
 
         <div>&nbsp;</div>
-        <a href="#sec1" class="btn btn-default btn-lg">Empieza</a>
+        <a href="#test" class="btn btn-default btn-lg">Empieza</a>
+    </div>
+</div>
+<div class="descriptions" id="descripcion">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>Descripción</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <div class="descriptions-item">
+                    <p>La aplicación Test Vocacional permite poder conocer que carreras del ámbito de la República Dominicana
+                        están relacionadas con el perfil de personalidad que cumple la persona que toma el test. Básicamente se deben responder ciertas preguntas
+                        sobre los intereses, gustos, y sentimientos sobre ocupaciones.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 col-sm-2 col-lg-2 col-md-offset-2 col-sm-offset-2 col-lg-offset-2 text-center">
+            <div class="descriptions">
+                <i class="fa fa-male"></i>
+                <h4>Experto</h4>
+                <p>Recibe una recomendación como un psícologo vocacional experto.</p>
+            </div>
+        </div>
+            <div class="col-md-2 col-sm-2 col-lg-2 text-center">
+                <div class="descriptions">
+                    <i class="fa fa-asterisk"></i>
+                    <h4>Simple</h4>
+                    <p>No es para nada complicado, no hay ni que leer mucho.</p>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2 col-lg-2 text-center">
+                <div class="descriptions">
+                    <i class="fa fa-bar-chart"></i>
+                    <h4>Gráficos</h4>
+                    <p>Los resultados, no serán simple textos estáticos.</p>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2 col-lg-2 text-center">
+                <div class="descriptions">
+                    <i class="fa fa-print"></i>
+                    <h4>Imprime</h4>
+                    <p>Tus resultados guardarlo por el tiempo que necesites.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <hr/>
+            <div class="col-md-2 col-sm-2 col-lg-2 col-xs-2 col-md-offset-2 col-sm-offset-2 col-lg-offset-2 col-xs-offset-2">
+                <h1><i class="fa fa-graduation-cap fa-pull-right"></i></h1>
+            </div>
+
+            <div class="col-md-7 col-sm-7 col-lg-7 col-xs-7 col-md-offset-1 col-sm-offset-1 col-lg-offset-1 col-xs-offset-1">
+                <h1 class="pull-left">Conoce tu carrera</h1>
+                <p class="lead pull-left">Una ayuda experta a tan sólo un click</p>
+            </div>
+        </div>
     </div>
 </div>
 
-<div id="sec1" class="blurb" ng-controller="BarCtrl">
+<div id="test" class="blurb" ng-controller="BarCtrl">
     <div class="container" ng-hide="endOfQuestions == true">
         <div class="row">
             <div class="col-md-12 ">
@@ -77,32 +136,33 @@
                 </div>
         </div>
 
-        <h4>Combinación de letras: </h4>
-        <h5>{{suggestedCode}}</h5>
+        <h4>Combinación de letras: <a href="#test" ng-click="dialogNew(1)" class="fa fa-info-circle links">  </a></h4>
+
+        <h5 class="text-muted">{{suggestedCode}}</h5>
         <div class="row" >
-            <h4>Tu estilo de personalidad:</h4>
+            <h4>Tu estilo de personalidad: <a href="#test" ng-click="dialogNew(2)" class="fa fa-info-circle links">  </a></h4>
             <div ng-repeat="message in messages">
-                <h5 class="paragraphs title">{{message.name}}</h5>
+                <h5 class="paragraphs text-primary">{{message.name}}</h5>
                 <h6 class="paragraphs">{{message.description}}</h6>
                 <h6 class="paragraphs">{{message.ocupations}}</h6>
             </div>
         </div>
         <div class="row" >
-        <h4>Oferta academica</h4>
+        <h4>Oferta academica <a href="#test" ng-click="dialogNew(3)" class="fa fa-info-circle links">  </a></h4>
             <div ng-repeat="career in careersSuggestions" >
-                <h5 class="paragraphs">{{career.name}}</h5>
+                <h5 class="paragraphs text-success">{{career.name}}</h5>
             </div>
         </div>
         <div class="row" ng-show="noOrdinaryCareer==true">
-            <h4>Oferta academica sin prioridad en peso de personalidad</h4>
+            <h4>Oferta academica sin prioridad en peso de personalidad <a href="#test" ng-click="dialogNew(4)" class="fa fa-info-circle links">  </a></h4>
             <div ng-repeat="career in careersSuggestionsNoOrder">
-                <h5 class="paragraphs">{{career}}</h5>
+                <h5 class="paragraphs text-success">{{career}}</h5>
             </div>
         </div>
             <div class="row">
-                <h4>Conclusión:</h4>
-                <h5 class="paragraphs" ng-show="showPsMessage==true">{{psMessage}}</h5>
-                <h5 class="paragraphs" ng-show="showNothingFound==true">{{nothingFound}}</h5>
+                <h4>Conclusión: <a href="#test" ng-click="dialogNew(5)" class="fa fa-info-circle links">  </a></h4>
+                <h5 class="paragraphs text-info" ng-show="showPsMessage==true">{{psMessage}}</h5>
+                <h5 class="paragraphs text-info" ng-show="showNothingFound==true">{{nothingFound}}</h5>
             </div>
     </div>
     <div class="container space text-center">
@@ -152,5 +212,6 @@
 <script src="js/scripts.js"></script>
 <script src="vendor/bootstrapDialog/bootstrap-dialog.min.js"></script>
 <script src="vendor/angular-chart/angular-chart.min.js"></script>
+<script src="vendor/angular-tooltip/angular-tooltips.min.js"></script>
 </body>
 </html>

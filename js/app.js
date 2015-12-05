@@ -1,4 +1,4 @@
-﻿angular.module('testVApp', ['testVfilter', 'chart.js']);
+﻿angular.module('testVApp', ['testVfilter', 'chart.js', '720kb.tooltips']);
 
 
 angular.module('testVApp')
@@ -10,7 +10,7 @@ angular.module('testVApp')
         $scope.endOfQuestions = false;
         var textVars = ["R", "I", "A", "S", "E", "C"];
         $scope.currentVariable = 0;
-        $scope.currentSection = 0; //Change it back
+        $scope.currentSection = 3; //Change it back
         $scope.sectionOfYes = 0;
         $scope.vars = {
             R: 0,
@@ -1104,9 +1104,96 @@ angular.module('testVApp')
          * @param whichalert specify which alert will display with a number from 0 to n
          */
         $scope.dialogNew = function(whichalert, message, title) {
-            switch(whichalert) {
+            switch (whichalert) {
                 case 0: {
                     BootstrapDialog.alert(message);
+                    break;
+                }
+                case 1: {
+                    var $textAndPic = $('<div></div>');
+                    $textAndPic.append('<p>Te permite conocer cuál es la combinación de siglas de personalidad para poder establecer a que carrera te asemejas.</p><p>Se componen normalmente de los diferentes estilos como Realista (R), Artística (A), Social (S), Investigativa (I), Emprendimiento (E) y Convencional (C). </p><br />');
+                    $textAndPic.append('<p>Ejemplo:</p><p>Para el caso del siguiente gráfico podemos ver como cada personalidad tiene un numero. En orden de mayor a menor, las primeras tres te especificaran la combinación que te corresponde de acuerdo a la personalidad.</p>');
+                    $textAndPic.append('<img width="100%" src="/assets/hollandHex.PNG" />');
+                    $textAndPic.append('<p>Para este ejemplo, el orden seria Social, Investigativa y Artística dando como resultado <strong>SIA</strong></p>');
+
+                    BootstrapDialog.show({
+                        type: BootstrapDialog.TYPE_WARNING,
+                        title: 'Información sobre combinaciones',
+                        message: $textAndPic,
+                        buttons: [{
+                            label: 'Cerrar',
+                            action: function(dialogRef){
+                                dialogRef.close();
+                            }
+                        }]
+                    });
+                    break;
+                }
+                case 2: {
+                    var $textAndPic = $('<div></div>');
+                    $textAndPic.append('<p>Al conocer ya tu combinación, se conoce entonces los tres estilos principales de personalidad de Holland que posees.</p><p>Por lo que esta sección busca explicarte cada uno de la manera más especifica posible, y clara.</p><br />');
+                    BootstrapDialog.show({
+                        type: BootstrapDialog.TYPE_WARNING,
+                        title: 'Información sobre estilos de personalidad',
+                        message: $textAndPic,
+                        buttons: [{
+                            label: 'Cerrar',
+                            action: function(dialogRef){
+                                dialogRef.close();
+                            }
+                        }]
+                    });
+                    break;
+                }
+                case 3: {
+                    var $textAndPic = $('<div></div>');
+                    $textAndPic.append('<p>Te permite conocer sobre a que carrera tu perfil aplica con un porcentaje de acierto de 99%, ya que dicha carrera es especifica para el estilo de personalidad que tienes, y el orden de importancia de cada una individualmente.</p>');
+                    $textAndPic.append('<p>Es importante hacer notar que las carreras planteadas aquí son las ofrecidas en la República Dominicana, y aún asi no son todas. Dicha aclaración es para que se comprenda que puede existir una carrera con dicha personalidad, pero no se encuentra entre las principales ofrecidas en nuestro país.</p>');
+                    BootstrapDialog.show({
+                        type: BootstrapDialog.TYPE_WARNING,
+                        title: 'Información sobre oferta acádemica',
+                        message: $textAndPic,
+                        buttons: [{
+                            label: 'Cerrar',
+                            action: function(dialogRef){
+                                dialogRef.close();
+                            }
+                        }]
+                    });
+                    break;
+                }
+                case 4: {
+                    var $textAndPic = $('<div></div>');
+                    $textAndPic.append('<p>Te permite conocer sobre las carreras que tienen el mismo perfil pero sin importar el orden de la combinación que tienes. Es decir, las carreras que presentan cualquiera de las tres letras que corresponden a tus estilos serán mostradas aqui.</p>');
+                    $textAndPic.append('<p>La probabilidad de un acierto en esta área a una respuesta más concreta se ve reducida desde un 20% hasta un 80% para algunos casos. Por lo que es importante que se plantee una cita con un psícologo vocacional</p>');
+                    BootstrapDialog.show({
+                        type: BootstrapDialog.TYPE_WARNING,
+                        title: 'Información sobre oferta acádemica sin peso de personalidad',
+                        message: $textAndPic,
+                        buttons: [{
+                            label: 'Cerrar',
+                            action: function(dialogRef){
+                                dialogRef.close();
+                            }
+                        }]
+                    });
+                    break;
+                }
+                case 5: {
+                    var $textAndPic = $('<div></div>');
+                    $textAndPic.append('<p>Esta sección muestra información relacionada a la necesidad de visitar un psícologo vocacional, y de cúal seria el procedimiento si fuese necesario. </p>');
+                    $textAndPic.append('<p>Por ejemplo, si el sistema recomienda una carrera; dicha decisión es recomendada que se converse con un psícologo para que haga un análisis más profundo, y principalmente si la persona no se siente agusto con la carrera sugerida para que otra alternativa sea mostrada.</p>');
+                    BootstrapDialog.show({
+                        type: BootstrapDialog.TYPE_WARNING,
+                        title: 'Información sobre concclusión',
+                        message: $textAndPic,
+                        buttons: [{
+                            label: 'Cerrar',
+                            action: function(dialogRef){
+                                dialogRef.close();
+                            }
+                        }]
+                    });
                     break;
                 }
             }
