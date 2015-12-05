@@ -235,7 +235,7 @@ img.grayscale {
 
 .header {
   height: 100%;
-  background: #f68076 url('/assets/bg-min.jpg') no-repeat center center fixed;
+  background: #f68076 url('/assets/bg-min-resized.jpg') no-repeat center center fixed;
   background-size: cover;
 }
 
