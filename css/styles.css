@@ -62,9 +62,23 @@ h1,h2,h3,h4,.lead,.description, .btn,.navbar a {
     font-size:1em;
   }
 
+  .cursor-help {
+    cursor:help;
+  }
+
   .header .description {
     color:white;
     font-size:2em;
+  }
+
+  .carrera {
+    font-size:2em;
+
+  }
+
+  .subcarrera {
+    font-size:1em;
+
   }
 }
 
@@ -210,8 +224,21 @@ img.grayscale {
 }
 
 .header .btn-lg:hover {
-   background-color:#eeeeee;
+   background-color:white;
    color:#777777;
+}
+
+.header .btn-md {
+  font-size:18px;
+  border-color:#eeeeee;
+  padding:10px;
+  background-color:transparent;
+  color:#ffffff;
+}
+
+.header .btn-md:hover {
+  background-color:white;
+  color:#777777;
 }
 
 .navbar a {
